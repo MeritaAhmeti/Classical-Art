@@ -1,0 +1,212 @@
+body
+{
+    margin:0px;
+    
+
+}
+
+/*-------------TOP BAR FILLON KETU -----------*/
+.top-bar
+{   
+    background-color: #f3f3f3;
+    width: 100%;
+    height: 55px;
+    border-bottom: 1px solid #e6e6e4;
+    display:block;
+    position: sticky;
+    top:0;
+    z-index: 1;
+}
+#rectangle
+{
+    display: block;
+    background-color: #333333;
+    width: 100%;
+    height: 8px;
+      
+}
+@font-face
+{
+    src:url(Fonts/Georgia Regular.ttf);
+    font-family:Georgia Regular;
+    src:url(Fonts/georgia.ttf);
+    font-family:georgia;
+}
+
+#contact
+{
+    color: #666666;
+    display: inline-block;
+    margin-left: 194px;
+    height: 46px;
+    font-size: 13px;
+    margin-top: 3px;
+    font-family:Georgia Regular;
+  
+}
+
+.top-bar form
+{
+     
+    align-items: center;
+    height:45px;
+    margin-right: 165px;
+    display: inline-block;
+    
+}
+.top-bar .search-bar
+{  
+    float: right;
+    height: 45px;
+    display: inline-block;
+     
+       
+}
+.search-bar span
+{
+    position: relative;
+    padding-left: 19px;
+    padding-right: 30px;
+    top: 10px;
+}
+.top-bar button
+{
+    width: 70px;
+    cursor: pointer;
+    position: relative;
+    background: #4b4b4b;
+    border-radius: 15px;
+    height: 25px;
+    text-decoration: none;
+    border: none;
+    margin:0px auto;
+    top: 10px;
+    color: #A4A4A4;
+    margin-right: 10px;
+}
+.top-bar button:hover
+{
+    color:#f3f3f3;
+}
+.top-bar form input
+{    
+    position: relative;
+    background: #4b4b4b;
+    border-radius: 15px;
+    height: 25px;
+    width:210px;
+    text-decoration: none;
+    border: none;
+    padding-left: 10px;
+    padding-right: 30px;
+    top: 10px;
+    color: #f3f3f3;
+  
+   
+
+
+
+}
+.top-bar form img
+{   
+    position: relative;
+    top: 15px;
+    right: 30px;
+    cursor: pointer;
+    
+ 
+}
+/*--------------- TOP BAR MBARON KETU -------------*/
+/*-------------- HEADER FILLON KETU ------------*/
+header 
+{   
+     
+    height: 90px;
+    width: 100%;
+    background-color: #f3f6f4; 
+    
+  
+}
+header .logo
+{
+   
+    height: 88px;
+    display: inline-block;
+    margin-left: 194px;
+    
+}
+header h1
+{ 
+   
+    margin: 0px;
+    padding-top:10px;
+    color: #505050;
+    font-size: 36px;
+    font-family:georgia;
+    font-style:italic;
+    
+}
+
+header h4
+
+{
+    margin: 0px;
+    color: #666666;
+    font-size: 13px;
+    padding-top:5px;
+    font-family:Georgia;
+
+}
+
+/*-----------HEADER MBARON KETU ---------------*/
+/*-----------IMAGE SWAP FILLON KETU------------*/
+.image-swap
+{  
+    display:flex;
+    justify-content: center;
+    background-color: #ebebeb;
+}
+.image-swap .small-wrap 
+{
+    border:1px solid #c8c8c8;
+    display:inline-block;
+    flex-wrap: wrap;
+    margin: 9.5px;
+}
+.image-swap .small-wrap #small-image
+{
+  
+    margin:2px;
+    width:60px;
+    height:60px;
+    background-color: #333333;
+}
+.image-swap .small-image-container
+{
+     display:inline-block;
+    width:175px;
+    margin-top:30.5px;
+    margin-left:10px;
+}
+.image-swap .big-wrap
+{
+     display:inline-block;
+    border:1px solid #c8c8c8;
+}
+.image-swap .big-wrap #big-image
+{
+    
+    background-color: #333333;
+    width:770px;
+    height:386px;
+    margin:9px;
+    font-size: 39.91px;
+}
+.image-swap .big-image-container
+{
+    
+    margin-top:40px;
+    margin-left:15px;
+    margin-right: 20px;
+}
+/*-----------IMAGE SWAP MBARON KETU------------*/

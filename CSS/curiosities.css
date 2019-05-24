@@ -1,0 +1,75 @@
+body
+{
+    margin:0px;
+        background-color: #ebebeb;
+        animation: myanimation 10s infinite;
+}
+
+@font-face
+{
+    src:url(Fonts/ABeeZee-Regular.otf);
+    font-family: ABeeZee Regular;
+}
+
+
+/* PJESA E KURIOZITETEVE */
+
+.titulli {
+   
+   margin-left: 520px;
+   margin-top: 80px;
+   font-size: 25px;
+   color: #303030;
+}
+
+h2 {
+   color: #303030; 
+   font-family: ABeeZee Regular;
+   margin-top: 50px;
+}
+
+.art1 {
+    margin-left: 380px;
+}
+
+.mona {
+    width: 600px;
+    font-size: 20px;
+    color: #444444;
+
+}
+
+
+@keyframes myanimation {
+    0% {background-color :#bfbfbf;}
+    25% { background-color: #ebebeb ;}
+    50% {background-color: #bfbfbf;}
+    75% {background-color: #ebebeb ;}
+    100% {background-color: #bfbfbf;}
+}
+
+.copyright  {
+
+    background-color: #191919;
+    justify-content: center;
+    display: inline-flex;
+    width: 100%;
+    height: 50px;
+    color: #919191 ; 
+    font-family: Georgia-Regular; 
+    font-size: 12.54px; 
+}
+
+ .copyright p {
+
+
+    margin-top:17px;
+
+}
+
+ .copyright .template {
+
+    margin-left: 480px;
+    padding-right: 5px;
+    float: right;
+}
