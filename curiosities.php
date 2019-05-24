@@ -8,6 +8,27 @@
         <link rel="stylesheet" href="CSS/dropdown.css">
 
         <title>Classical-Art</title>
+            <script>
+        function getVote(int){
+            if(window.XMLHttpRequest){
+                //for Firefox,Chrome,Opera,Safari
+                xmlhttp = new XMLHttpRequest();
+            }
+            else
+            {
+                //code for IE
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+             xmlhttp.onreadystatechange=function(){
+                if(this.readyState==4 && this.status==200)
+                {
+                    document.getElementById("poll").innerHTML=this.responseText;
+                }
+             }
+             xmlhttp.open("GET","poll_voto.php?vote="+int,true);
+             xmlhttp.send();
+        }
+        </script>
     
     </head>
     <body>
@@ -95,13 +116,19 @@
             <p class="mona">Another painting in the collection of the Art Institute of Chicago is Edward Hopper’s Nighthawks. Hopper allegedly based the painting on a diner that was located in New York City’s Greenwich Village in an area where Greenwich Street meets 11th Street and 7th Avenue called Mulry Square. But he actually based the painting on an all-night coffee stand. “I simplified the scene a great deal and made the restaurant bigger,” he said. “Unconsciously, probably, I was painting the loneliness of a large city.”</p>
             
         </div>
+         <div id="poll">
+            <h3 style= "margin-left:382px;">Do you enjoy reading about curiosities?</h3>
+            <form style="margin-left:382px" >
+                Yes:
+                <input type="radio" name="vote" value="0" onclick="getVote(this.value)">
+                <br>
+                No:
+                <input type="radio" name="vote" value="1" onclick="getVote(this.value)">
+            </form>
+        </div>
         <div class="copyright">
                 <p>Copyright &copy; 2012 Domain Name - All rights reserved <span class="template">Template by OS templates</span></p>
             </div>
-
-
-
-
-
+   
     </body>
     </html>
