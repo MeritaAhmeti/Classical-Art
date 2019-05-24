@@ -1,0 +1,24 @@
+CACHE MANIFEST
+
+CACHE:
+index.html
+forma.html
+Forma3.html
+curiosities.html
+gallery.html
+puzzle.html
+tabela.html
+content.css
+curiosities.css
+dropdown.css
+footer.css
+forma.css
+gallery.css
+header.css
+tabela.css
+
+FALLBACK:
+#Projekti-Internet.html
+
+NETWORK:
+*
