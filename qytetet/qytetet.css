@@ -1,0 +1,59 @@
+body{
+ background-color:  #786f6d  ;
+background-attachment: fixed;
+}
+div.drejtekendeshi {
+margin-top:50px;
+margin-right:auto;
+margin-bottom:30px;
+margin-left:50px;
+    padding: 10px 50px;
+    width: 85%;
+    border:25px;
+    border:10px dotted red;
+background-color:   #ad8585;
+}
+p {
+
+text-align:center;
+padding:10px;
+font-family:Georgia;
+font-weight: bold;
+font-style:italic;
+color: #000000;
+text-indent: 50px;
+letter-spacing: 2px;
+}
+h1 {
+
+
+    text-align: center;
+    font-style:italic;
+    font-size:30px;
+    color: red;
+}
+h2 {
+    text-align: center;
+    font-size:19px;
+    color: #000000;
+    font-style: italic;
+}
+figure
+{
+    margin:10px 90px 10px 90px;
+}
+figcaption
+{
+    font-family:sans-serif;
+    font-style: italic;
+
+}
+img{
+    width:360px;
+    height:235px;
+    border-radius: 8px;
+}
+#video{
+    margin:30px 350px 30px 350px;
+ 
+}
