@@ -1,0 +1,223 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Artists</title>
+      <link rel="stylesheet" type="text/css" href="tabela.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="jquery-3.2.1.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+        
+<script>
+/*=====pjesa GET ATTR jQuery====*/
+$(document).ready(function(){
+  $("#bttn01").click(function(){
+    alert($("#jLink").attr("href"));
+  });
+});
+/*=======================================*/
+
+    
+/*=============pjesa event-hover() jQ=====================*/       
+$(document).ready(function(){
+  $("#jQ01").hover(function(){
+    alert("You hovered over my favorite Art Work: 'Starry Night'");
+  },
+  function(){
+    alert("Here's a fact before you look something else: 'Van Gogh created Starry Night in 1889 just thirteen months before his death'");
+  }); 
+});/*=======================================*/ 
+
+
+/*=============pjesa hide e parag jQ=====================*/   
+$(document).ready(function(){
+  $(".Prg").click(function(){
+    $(this).hide();
+  });
+});/*=======================================*/ 
+     
+    
+/*===============pjesa e togg ejQ========================*/ 
+$(document).ready(function(){
+  $("#bttn02").click(function(){
+    $("#tgg").toggle();
+  });
+});/*=======================================*/ 
+    
+    
+/*===============pjesa chain eff dhe multiple CSS jQ===========*/ 
+$(document).ready(function(){
+  $("#bttn03").click(function(){
+    $(".JPjesa01").css({"background-image": "url(foto/bg20.jpg)", "font-family": "Lucida Calligraphy", "overflow": "hidden", "background-size": "cover"}).slideUp(1700).slideDown(1700);
+  });
+});
+</script>   
+</head>
+    
+<body>
+    
+<div class="header">
+  <h1>Top Classical Art Artists</h1>
+</div>
+
+
+<!--===================== Pjesa e tabelave ===============================-->
+<div class="pjesa1">
+    <h1 style="text-align: center; padding: 70px; font-family:Lucida Calligraphy;">A list of famous artists, chosen mainly from the nineteenth, twentieth or twenty-first centuries 
+    </h1>
+    
+<section><table cellpadding="20">
+  <tr>
+    <th colspan="13" style="font-size: 25px; font-family: Lucida Calligraphy">The Most Famous Artists in The World</th>   
+  </tr>
+  <tr>
+    <th>Nr.</th>
+    <th>Photo</th>
+    <th>Name</th>
+    <th>Lifespan</th>
+    <th>Type of Art</th>
+    <th>Best known for:</th>
+    <th rowspan="6"></th>
+    <th>Nr.</th>
+    <th>Photo</th>
+    <th>Name</th>
+    <th>Lifespan</th>
+    <th>Type of Art</th>
+    <th>Best known for:</th>
+  </tr>
+  <tr>
+    <td>01</td>
+    <td><img src="foto/04.jpg" height="150px"></td>
+    <td>Leonardo Da Vinci</td>
+    <td>1452 - 1519</td>
+    <td>Renaissance Painter</td>
+    <td>Mona Lisa</td>
+    <td>06</td>
+    <td><img src="foto/06.jpg" height="150px"></td>
+    <td>Pablo Picasso</td>
+    <td>1881 - 1973</td>
+    <td>Cubist Painter</td>
+    <td>Guernica</td>
+  </tr>
+  <tr>
+    <td>02</td>
+    <td><img src="foto/10.jpg" height="150px"></td>
+    <td>Vincent Van Gogh</td>
+    <td>1853 - 1890</td>
+    <td>Impressionist Painter</td>
+    <td id="jQ01">The Starry Night</td>
+    <td>07</td>
+    <td><img src="foto/07.jpg" height="150px"></td>
+    <td>Raphael</td>
+    <td>1483 - 1520</td>
+    <td>Renaissance Art</td>
+    <td>Mond Crucifixion</td>
+  </tr>
+  <tr>
+    <td>03</td>
+    <td><img src="foto/08.jpg" height="150px"></td>
+    <td>Rembrandt</td>
+    <td>1606 - 1669</td>
+    <td>Vivid Realism</td>
+    <td>The Jewish Bride</td>
+    <td>08</td>
+    <td><img src="foto/09.jpg" height="150px"></td>
+    <td>August Renoir</td>
+    <td>1841 - 1919</td>
+    <td>Impressionism Painter</td>
+    <td>On the Terrace</td>
+  </tr>
+  <tr>
+    <td>04</td>
+    <td><img src="foto/05.jpg" height="150px"></td>
+    <td>Michelangelo</td>
+    <td>1475 - 1564</td>
+    <td>Renaissance Art</td>
+    <td>Mural on the Sis.Chapel</td>
+    <td>09</td>
+    <td><img src="foto/03.jpg" height="150px"></td>
+    <td>Jan Vermeer</td>
+    <td>1632 - 1675</td>
+    <td>Vivid Depiction</td>
+    <td>View of Delft</td>
+  </tr>
+  <tr>
+    <td>05</td>
+    <td><img src="foto/02.jpg" height="150px"></td>
+    <td>Claude Monet</td>
+    <td>1840 - 1926</td>
+    <td>Impressionist Painter</td>
+    <td>Women in Garden</td>
+    <td>10</td>
+    <td><img src="foto/01.jpg" height="150px"></td>
+    <td>Paul Cezanne</td>
+    <td>1839 - 1906</td>
+    <td>Impressionist Painter</td>
+    <td>The Card Players</td>
+  </tr>
+</table></section>
+</div>   
+<!-- =======================================================================-->
+    
+    
+<!-- =============================Pjesa e Audios====================================-->
+<div class="menu">
+	<h3>Top 3 Classical Music Artists:</h3>
+    
+<ul>
+  <li>Wolfgang Amadeus Mozart<br><br><audio controls>
+<source src="audio/Mozart%20-%20Lacrimosa.mp3"></audio></li>
+  <li>Johann Sebastian Bach<br><br><audio controls>
+<source src="audio/Johann%20Sebastian%20Bach%20-%20Bouree%20In%20E%20Minor.mp3"></audio></li>
+  <li>Ludwig van Beethoven<br><br><audio controls>
+<source src="audio/Beethoven-Fur%20Elise.mp3"></audio></li>
+</ul>
+    
+<h3> Suggestions for Art Artists to visit:</h3>
+    
+<ol>
+    <a href="artist/LDV.html"><li>Leonardo Da Vinci</li></a>
+    <a href="artist/JA.html"><li>Josef Albers</li></a>
+    <a href="artist/VVG.html"><li>Vincent Van Gogh</li></a>
+</ol><br>
+    
+    <h3><address> For more information about Art Artists <a href="https://www.biographyonline.net/artists/top-10-painters.html" id="jLink"><u>click here.</u></a></address><button id="bttn01" style="background-image: url(foto/bg17.jpg); color: aliceblue; padding: 20px;margin: 10px; font-size: 16px">If you want to see where does <u><i><b>"click here"</b></i></u> send you, push here</button></h3>
+    
+</div>
+<!-- =======================================================================-->
+
+    
+<!-- =============================Pjesa me Quotes==========================================-->
+  <div style="overflow: hidden; margin-left: 41%; margin-top: 50px;">
+    <div class="JPjesa">
+        <div id="tgg">
+            <h2>Top Pablo Picasso/Quotes</h2>
+            <p class="Prg">Everything you can imagine is real.</p>
+            <p class="Prg">Art washes away from the soul the dust of everyday life.</p>
+            <p class="Prg">The purpose of art is washing the dust of daily life off our souls.</p>   
+            <p>Art is a lie that makes us realize truth.</p>
+            <p>Inspiration does exist, but it must find you working.</p>
+            <p>Good artists copy, great artists steal.</p>
+            <p>I am always doing that which I can not do, in order that I may learn how to do it.</p>
+            <p>It takes a long time to become young.</p>
+        </div>
+        <button id="bttn02" style="background-image: url(foto/bg17.jpg); color: aliceblue; padding: 20px; font-size: 16px">Click here to Hide or Show Picasso's Quotes</button>
+    </div>
+    
+    <div class="JPjesa01" style="margin-top:80px;">
+        <h2>Top Ludwig van Beethoven/Quotes</h2>
+        <p class="Prg">Music is a higher revelation than philosophy.</p>
+        <p class="Prg">Music is the mediator between the spiritual and the sensual life.</p>   
+        <p class="Prg">Music should strike fire from the heart of man, and bring tears from the eyes of woman.</p>
+        <p>Nothing is more intolerable than to have to admit to yourself your own errors.</p>
+        <p>Friends applaud, the comedy is over.</p>
+        <p>Music comes to me more readily than words.</p>
+        <p>A great poet is the most precious jewel of a nation.</p>
+    </div>
+    <button id="bttn03" style="background-image: url(foto/bg17.jpg); color: aliceblue; padding: 20px; font-size: 16px">Click here to see a chaining jq effect on Beethoven's Quotes</button>
+</div>
+ <!-- =======================================================================-->
+
+</body>
+</html>

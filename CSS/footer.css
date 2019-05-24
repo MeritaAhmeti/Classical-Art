@@ -1,0 +1,270 @@
+footer {
+  
+    margin: 0px;
+    padding: 0px;
+    background-color: #232323;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+footer .bllok {
+
+    display: inline-block;
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+footer .bllok .FROM_THE_BLOG {
+
+  font-size: 16px;
+  font-family: Georgia-Regular;
+  color: rgb(92, 92, 92);
+  margin-bottom: 30px;
+  margin-top: 25px;
+}
+
+footer .bllok .Blog_Post_Title {
+
+  font-size: 15px;
+  font-family: Georgia-Regular;
+  color: rgb(152, 152, 152);
+  line-height: 1.2;
+  margin: 0px;
+}
+
+footer .bllok .Posted_by_Admin{
+
+  margin-top: 2px; 
+  font-size: 13px;
+  font-family: Georgia-Regular;
+  color: rgb(117, 117, 117);
+  line-height: 1.2;
+}
+
+@font-face {
+  
+    font-family: Georgia-Regular;
+    src: url(../Fonts/Georgia-Regular.ttf);
+}
+
+footer .bllok .blog_post{
+
+  font-size: 14px;
+  font-family: Georgia-Regular;
+  color: rgb(152, 152, 152);
+  line-height: 1.3;
+  width: 205px;
+  margin: 0px;
+}
+
+footer .bllok .Read {
+
+    margin-top: 10px;
+    float: right;
+    font-size: 14px; 
+}
+
+footer .bllok .Quick_Links{
+
+  font-size: 16px;
+  font-family: Georgia-Regular;
+  color: rgb(92, 92, 92);
+  margin-left: 0px;
+  margin-bottom: 45px;
+  margin-top: 25px;
+} 
+
+footer .bllok .Lorem{
+
+  font-size: 12px;
+  font-family: Georgia-Regular;
+  color: rgb(152, 152, 152);
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+footer .bllok .Rectangle {
+
+    background-color: rgb(152, 152, 152);
+    width: 210px;
+    height: 1px;
+    margin: 0px;
+
+}
+
+footer .bllok .Latest_Tweets {
+
+  font-size: 16px;
+  font-family: Georgia-Regular;
+  color: rgb(92, 92, 92);
+  margin-left: 0px;
+  margin-bottom: 30px;
+  margin-top: 25px;
+}
+
+footer .bllok a{
+
+    color: #1194b2;
+}
+
+footer .bllok .tweet {
+
+  font-size: 14px;
+  font-family: Georgia-Regular;
+  color: rgb(152, 152, 152);
+  line-height: 1.4;
+  width: 193px;
+}
+
+footer .bllok .contact_us{
+
+  font-size: 16px;
+  font-family: Georgia-Regular;
+  color: rgb(92, 92, 92) ;
+  margin-left: 0px;
+  margin-bottom: 24px;
+  margin-top: 25px;
+  
+}
+
+footer .bllok form input[type=text]{
+
+    position: relative;
+    width: 155px;
+    height: 30px;
+    padding-left: 10px;
+    padding-right: 30px;
+    top: 10px;
+    font-family: Georgia-Regular;
+    color: rgb(152, 152, 152) ;
+    background: #353535;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    border: 1px solid rgba(0,0,0,0.4);
+    display: block;
+}
+
+footer .bllok input[type=email] {
+    
+    position: relative;
+    width: 155px;
+    height: 30px;
+    padding-left: 10px;
+    padding-right: 30px;
+    top: 8px;
+    font-family: Georgia-Regular;
+    color: rgb(152, 152, 152) ;
+    background: #353535;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    border: 1px solid rgba(0,0,0,0.4);
+    display: block;
+}
+
+footer .bllok input[type=message]  { 
+
+    width: 155px;
+    height: 75px; 
+    padding-bottom: 50px;
+    padding-left: 10px;
+    padding-right: 30px;
+    top: 6px;
+    font-family: Georgia-Regular;
+    color: rgb(152, 152, 152) ;
+    background: #353535;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    border: 1px solid rgba(0,0,0,0.4);
+    display: block;
+  
+}
+
+footer .bllok form {
+  
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+footer .bllok  input[type=submit]{
+
+    color: #1194b2;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    padding-left: 9px;
+    width: 75px;
+    height: 30px;
+    top: 5px;
+    font-family: Georgia-Regular;
+    background: #353535;
+    border: none;
+    border-radius: 4px;
+    font-size: 15px;
+    text-transform: uppercase ;
+    cursor: pointer ;   
+    border: 1px solid rgba(0,0,0,0.4);
+    display: block;
+  
+}
+
+footer .alert {
+  max-width: 145px;
+  padding-top: 13px;
+    padding-bottom: 13px;
+    padding-left: 10px;
+    top: 6px;
+    font-family: Georgia-Regular;
+    color: rgb(152, 152, 152) ;
+    background-color: #191919;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    border: 1px solid rgba(0,0,0,0.4);
+    display: block;
+    -webkit-box-shadow: 0px 0px 15px -7px rgba(243,246,244,1);
+-moz-box-shadow: 0px 0px 15px -7px rgba(243,246,244,1);
+box-shadow: 0px 0px 15px -7px rgba(243,246,244,1);
+}
+
+.error
+{
+  color:blue;
+
+}
+.success
+{
+  color:#ff9966;
+  text-align: center;
+  font-weight: bold;
+  font-size:14px;
+}
+
+.copyright  {
+  
+    background-color: #191919;
+    justify-content: center;
+    display: inline-flex;
+    width: 100%;
+    height: 50px;
+    color: #919191 ; 
+    font-family: Georgia-Regular; 
+    font-size: 12.54px; 
+  
+}
+
+ .copyright p {
+
+    margin-top:17px;
+   
+}
+
+ .copyright .template {
+
+    margin-left: 480px;
+    padding-right: 5px;
+    float: right;
+   
+}
