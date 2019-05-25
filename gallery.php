@@ -8,6 +8,27 @@
         <link rel="stylesheet" href="CSS/header.css">
 
         <title>Gallery</title>
+	                 <script>
+        function showHint(str){
+            if(str.length == 0){
+                document.getElementById("txtHint").innerHTML = "";
+                return;
+            }
+            else
+            {
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function(){
+                    if(this.readyState == 4 && this.status == 200)
+                    {
+                        document.getElementById("txtHint").innerHTML = this.responseText;
+                    }
+                }
+                xmlhttp.open("GET","gethint.php?q="+str,true);
+                xmlhttp.send();
+            }
+        }
+
+    </script>
     </head>
     <body>
         <div class="top-bar">
@@ -137,6 +158,12 @@
                 </div>
             </div>
         </div>
+	   <p style="display:inline-block; margin-left:310px ;">Please write down the city to see if it is part of most popular cities for arts and culture?</p>
+        <form>
+        <p style="display:inline-block; margin-left:310px ;"> City: 
+        <input style="display:inline-block;margin-right:100px; margin-bottom: 10px;" type="text" onkeyup="showHint(this.value)"><br>
+        <p style=" margin-left:310px"> Suggestions: <span id="txtHint"></span></p>
+        </form>
 <footer>
 	 <div class="copyright">
                 <p>Copyright &copy; 2012 Domain Name - All rights reserved <span class="template">Template by OS templates</span></p>
