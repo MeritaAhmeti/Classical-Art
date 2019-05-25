@@ -1,3 +1,4 @@
+<?php include('kontakto.php'); ?>
 <html manifest="manifest.appcache">
 
     <head>
@@ -25,6 +26,21 @@
             <div id="contact"><p>Tel: 11111 2222222222 | Mail: <a href="mailto:info@classicalart.com"/>info@classicalart.com</p></a></div>
 
             <div class="search-bar">
+                <?php 
+                session_start();
+                if(!isset($_SESSION["loggedin"]))
+                {
+                    echo '<a href="login.php"><button>Login</button></a>';
+                    echo '<a href="register.php"><button>Register</button></a>';
+
+                }
+                else
+                {
+                    echo '<span>Welcome, youre logged in as <b>'. $_SESSION["username"].'</b></span>';
+                    echo '<a href="logout.php"><button>Logout</button></a>';
+
+                }
+                ?>
                 <form>
                     <input type="text" placeholder="Search" name="Search">
                     <img src="Fotot/Search-button.png"/>
@@ -44,7 +60,7 @@
             <div class="menu">
                 <ul class="nav">
                     <li><a id="v" href="index.php" style="color: #1194B2">HOME</a></li>
-                    <li><a id="v" href="forma.php">BUY TICKETS</a></li>
+                    <li><a id="v" href="forma.html">BUY TICKETS</a></li>
                     <li><a id="v" href="curiosities.php">CURIOSITIES</a></li>
                     <li><a id="v" href="#">DROPDOWN</a>
                         <ul class="sub-menu">
@@ -191,11 +207,18 @@
 
             <div class="bllok">
                 <p class="contact_us">CONTACT US</p>
-                <form method="post">
+                <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
                     <input type="text" name="name" placeholder="Name"><br>
                     <input type="email" name="email" placeholder="Email"><br>
                     <input type="message" name="message" placeholder="Message"><br>
                     <input type="submit" name="submit" value="submit">
+                    <?php 
+                        include 'kontakto.php';
+                        if($msg != ''): ?>
+                            <div class="alert">
+                                <?php echo $msg ?>
+                            </div>
+                    <?php endif; ?>
                 </form>
             </div>
 
