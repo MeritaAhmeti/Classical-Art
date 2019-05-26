@@ -60,7 +60,7 @@
             <div class="menu">
                 <ul class="nav">
                     <li><a id="v" href="index.php" style="color: #1194B2">HOME</a></li>
-                    <li><a id="v" href="forma.html">BUY TICKETS</a></li>
+                    <li><a id="v" href="forma.php">BUY TICKETS</a></li>
                     <li><a id="v" href="curiosities.php">CURIOSITIES</a></li>
                     <li><a id="v" href="#">DROPDOWN</a>
                         <ul class="sub-menu">
