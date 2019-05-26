@@ -4,9 +4,9 @@ DEFINE('DB_USERNAME' , 'root');
 DEFINE('DB_PASSWORD', '');
 DEFINE('DB_NAME', 'user');
 
-$link = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_NAME);
+$db = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_NAME);
 
-if($link ===false)
+if($db === false)
 {
 	die("ERROR: Could not connect. " . mysqli_connect_error());
 }

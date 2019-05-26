@@ -1,5 +1,6 @@
 <?php 
 include('kontakto.php'); 
+include('postprocess.php');
 ?>
 
 <html manifest="manifest.appcache">
@@ -123,13 +124,13 @@ include('kontakto.php');
 
         <div class="main">
             <div class="post-container">
-                <form method="post" action="">
+                <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
                     <h1>Post</h1>
                     <h4>Subject:</h4>
-                    <input type="text" name="subject"><br/>
+                    <input type="text" name="subjecti"><br/>
                     <h4>Message</h4>
-                    <textarea name="message" rows="10" cols="34" placeholder="Write a post."></textarea><br/>
-                    <input type="submit" name="post" value="Submit a new post">
+                    <textarea name="posti" rows="10" cols="34" placeholder="Write a post."></textarea><br/>
+                    <input type="submit" name="new-post" value="Submit a new post">
                 </form>
             </div>
         </div>

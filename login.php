@@ -85,20 +85,20 @@ include('loginprocess.php');
                     <h5>Don't have an account? <a href="register.php">Register</a></h5>
                     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                         <h4 style="display: inline;">Username:</h4>
-                    <?php 
+<!--                     <?php 
                         if($username_err != ''): ?>
                             <div class="login-alert" style="display: inline;">
                                 <?php echo "*".$username_err ?>
                             </div>
-                    <?php endif; ?>
+                    <?php endif; ?> -->
                         <input type="text" name="username" placeholder="Username" style="margin: 20px 0px;"></br>
                         <h4 style="display: inline;">Password:</h4>
-                    <?php 
+<!--                     <?php 
                         if($password_err != ''): ?>
                             <div class="login-alert" style="display: inline;">
                                 <?php echo "*".$password_err ?>
                             </div>
-                    <?php endif; ?>
+                    <?php endif; ?> -->
                     </h4>
                         <input type="Password" name="password" placeholder="Password" style="margin: 20px 0px;"></br>
                         <input type="submit" name="login" value="LOGIN">
