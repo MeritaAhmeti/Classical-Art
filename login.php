@@ -63,12 +63,11 @@ include('loginprocess.php');
             <div class="menu">
                 <ul class="nav">
                     <li><a id="v" href="index.php" style="color: #1194B2">HOME</a></li>
-                    <li><a id="v" href="forma.html">BUY TICKETS</a></li>
-                    <li><a id="v" href="curiosities.html">CURIOSITIES</a></li>
+                    <li><a id="v" href="forma.php">BUY TICKETS</a></li>
+                    <li><a id="v" href="curiosities.php">CURIOSITIES</a></li>
                     <li><a id="v" href="#">DROPDOWN</a>
                         <ul class="sub-menu">
                             <li><a href="puzzle.html">PUZZLE</a></li>
-                            <li><a href="Forma3.html">CONTACT</a></li>
                             <li><a href="tabela/tabela.html">ARTISTS</a></li>
                         </ul>    
                     </li>
