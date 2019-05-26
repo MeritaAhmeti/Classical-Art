@@ -84,28 +84,28 @@ include('registerprocess.php');
                     <h5 style="position:relative; left: 50px;">Existing user? <a href="login.php">Log In</a></h5>
                     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                         <h4 style="display: inline;">Username:</h4>
-<!--                         <?php 
+                        <?php 
                             if($username_err != ''): ?>
                                 <div class="login-alert" style="display: inline;">
                                     <?php echo "*".$username_err ?>
                                 </div>
-                        <?php endif; ?> -->
+                        <?php endif; ?>
                         <input type="text" name="username" placeholder="Username" style="margin: 20px 0px;"></br>
                         <h4 style="display: inline;">Password:</h4>
-<!--                         <?php 
+                        <?php 
                             if($password_err != ''): ?>
                                 <div class="login-alert" style="display: inline;">
                                     <?php echo "*".$password_err ?>
                                 </div>
-                        <?php endif; ?> -->
+                        <?php endif; ?>
                         <input type="Password" name="password_1" placeholder="Password" style="margin: 20px 0px;"></br>
                         <h4 style="display: inline;">Confirm Password:</h4>
-<!--                         <?php 
+                        <?php 
                             if($confirm_password_err != ''): ?>
                                 <div class="login-alert" style="display: inline;">
                                     <?php echo "*".$confirm_password_err ?>
                                 </div>
-                        <?php endif; ?> -->
+                        <?php endif; ?>
                         <input type="Password" name="password_2" placeholder="Password" style="margin: 20px 0px;"></br>
                         <input type="submit" name="reg_user" value="Create my account">
 

@@ -6,19 +6,19 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
   header("location: index.php");
   exit;
 }
- 
- // LOGIN USER
+
+$username_err = $password_err = "";
 
 if (isset($_POST['login'])) {
   $username = mysqli_real_escape_string($db, trim($_POST['username']));
   $password = mysqli_real_escape_string($db, trim($_POST['password']));
   if (empty($username)) {
-    array_push($errors, "Username is required");
+    $username_err = "Username is required!";
   }
   if (empty($password)) {
-    array_push($errors, "Password is required");
+    $password_err = "Password is required!";
   }
-  if (count($errors) == 0) {
+  if (empty($password_err) && empty($username_err)) {
     $salt='anythingyouwant_' ;
     $password = md5($salt.$password);
     //$password = md5($password);
@@ -30,7 +30,8 @@ if (isset($_POST['login'])) {
       $_SESSION['loggedin'] = true;
       header('location: index.php');
     }else {
-        array_push($errors, "Wrong username/password combination");
+        $username_err ="You have entered an invalid username.";
+        $password_err ="You have entered an invalid password.";
     }
   }
 }

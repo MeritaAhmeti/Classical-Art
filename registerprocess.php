@@ -12,8 +12,9 @@ $_SESSION['user']= $_POST['username'];
 }
 
 // initializing variables
+
 $username = "";
-$errors = array(); 
+$username_err = $password_err = $confirm_password_err = "";
 
 // REGISTER USER
 if (isset($_POST['reg_user'])) 
@@ -25,10 +26,10 @@ if (isset($_POST['reg_user']))
 
 	// form validation: ensure that the form is correctly filled ...
 	// by adding (array_push()) corresponding error unto $errors array
-	if (empty($username)) { array_push($errors, "Username is required"); }
-	if (empty($password_1)) { array_push($errors, "Password is required"); }
+	if (empty($username)) { $username_err = "Username is required!"; }
+	if (empty($password_1)) { $password_err = "Password is required!"; }
 	if ($password_1 != $password_2) {
-	array_push($errors, "The two passwords do not match");
+		$confirm_password_err = "Passwords do not match!";
 	}
 
 	$user_check_query = "SELECT * FROM users WHERE username='$username' LIMIT 1";
@@ -39,11 +40,11 @@ if (isset($_POST['reg_user']))
 	{ // if user exists
 		if (trim($user['username']) === $username) 
 		{
-		array_push($errors, "Username already exists");
+			$username_err = "Username already exists!";
 		}
 	}
 	  // Finally, register user if there are no errors in the form
-if (count($errors) == 0) {
+if (empty($username_err) && empty($password_err) && empty($confirm_password_err)) {
 //$password = md5($password_1);//encrypt the password before saving in the database
 	$salt='anythingyouwant_' ;
 	$password = md5($salt.$password_1);
