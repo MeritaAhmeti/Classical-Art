@@ -62,7 +62,7 @@ include('postprocess.php');
             
             <div class="menu">
                 <ul class="nav">
-                    <li><a id="v" href="index.php" style="color: #1194B2">HOME</a></li>
+                    <li><a id="v" href="index.php">HOME</a></li>
                     <li><a id="v" href="forma.php">BUY TICKETS</a></li>
                     <li><a id="v" href="curiosities.php">CURIOSITIES</a></li>
                     <li><a id="v" href="#">DROPDOWN</a>
@@ -71,7 +71,8 @@ include('postprocess.php');
                             <li><a href="tabela/tabela.html">ARTISTS</a></li>
                         </ul>    
                     </li>
-                    <li><a href="gallery.html">GALLERY</a></li>
+                    <li><a id="v" href="gallery.php">GALLERY</a></li>
+                    <li><a href="posts.php" style="color: #1194B2">POST</a></li>
                 </ul>
             </div>
             
@@ -80,12 +81,14 @@ include('postprocess.php');
         <style>
             .main .post-container
             {
-                width: 150px;
+                width: 300px;
                 margin: 0px auto;
+                margin-top: 20px;
             }
             .main .post-container h1
             {
-                margin-left: 40px;
+            	width: 60px;
+                margin: 0px auto;
             }
             .main .post-container input[type="text"]
             {
@@ -119,11 +122,12 @@ include('postprocess.php');
                 background-color: #5b5b5b;
             }
         </style>
-
-
-        <div class="main">
+        <?php 
+        if(isset($_SESSION["loggedin"]))
+        {
+        echo '<div class="main">
             <div class="post-container">
-                <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+                <form method="post" action="posts.php">
                     <h1>Post</h1>
                     <h4>Subject:</h4>
                     <input type="text" name="subjecti"><br/>
@@ -132,7 +136,17 @@ include('postprocess.php');
                     <input type="submit" name="new-post" value="Submit a new post">
                 </form>
             </div>
-        </div>
+        </div>';
+    }
+    else
+    {
+        echo '<div class="main">
+            <div class="post-container">
+                <h3 style="width: 400px; padding: 100px 0;margin-left: -25px;"> You must be logged in to write a post.</h3>
+            </div>
+        </div>';
+    }
+    ?>
 
 
 <footer>
@@ -140,9 +154,9 @@ include('postprocess.php');
   <div class="bllok">
       
     <p class="FROM_THE_BLOG">FROM THE BLOG</p>
-    <p class="Blog_Post_Title">Classical Art</p>
-    <p class="Posted_by_Admin">Posted by Admin on 12.05.2018</p>
-    <p class="blog_post">Classical art is the art which is associated with the classical period. In the Classical period there was a revolution in Greek statuary, usually associated with the introduction of democracy and the end of the aristocratic culture associated with the kouroi.</p>
+    <p class="Blog_Post_Title"><?php echo $subjecti2 ?></p>
+    <p class="Posted_by_Admin">Posted by <?php echo $username2 ?> on <?php echo $created_at ?></p>
+    <p class="blog_post"><?php echo $posti2 ?></p>
     <p class="Read"><a href="https://www.beazley.ox.ac.uk/sculpture/styles/classical.htm">Read More » </a></p>
       
   </div>

@@ -71,7 +71,9 @@ include('loginprocess.php');
                             <li><a href="tabela/tabela.html">ARTISTS</a></li>
                         </ul>    
                     </li>
-                    <li><a href="gallery.html">GALLERY</a></li>
+                    <li><a id="v" href="gallery.php">GALLERY</a></li>
+                    <li><a href="posts.php">POST</a></li>
+
                 </ul>
             </div>
             
@@ -111,11 +113,10 @@ include('loginprocess.php');
 <footer>
     
   <div class="bllok">
-      
     <p class="FROM_THE_BLOG">FROM THE BLOG</p>
-    <p class="Blog_Post_Title">Classical Art</p>
-    <p class="Posted_by_Admin">Posted by Admin on 12.05.2018</p>
-    <p class="blog_post">Classical art is the art which is associated with the classical period. In the Classical period there was a revolution in Greek statuary, usually associated with the introduction of democracy and the end of the aristocratic culture associated with the kouroi.</p>
+    <p class="Blog_Post_Title"><?php echo $_SESSION["subjecti2"]; ?></p>
+    <p class="Posted_by_Admin">Posted by <?php echo $_SESSION["username2"]; ?> on <?php echo $_SESSION["created_at"]; ?></p>
+    <p class="blog_post"><?php echo $_SESSION["posti2"]; ?></p>
     <p class="Read"><a href="https://www.beazley.ox.ac.uk/sculpture/styles/classical.htm">Read More » </a></p>
       
   </div>

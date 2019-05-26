@@ -2,39 +2,32 @@
 require_once "config.php";
 session_start();
  
-$username = $subjecti = $posti = "";
-$username_err = $subjecti_err = $posti_err = "";
-
-if($_SERVER["REQUEST_METHOD"] == "POST")
-{
-
-	$username = "etnik";
-	$subjecti = $_POST["subjecti"];
-	$posti = $_POST["posti"];
-
-    if(empty($username_err) && empty($password_err) && empty($confirm_password_err))
-    {
-        $sql = "INSERT INTO users (username, subjecti, posti) VALUES (?, ?, ?)";
-         
-        if($stmt = mysqli_prepare($link, $sql))
-        {
-            mysqli_stmt_bind_param($stmt, "sss", $param_username, $param_subjecti, $param_posti);
-            
-            $param_username = $username;
-            $param_subjecti = $subjecti;
-            $param_posti = $posti;
-            
-            if(mysqli_stmt_execute($stmt))
-            {
-                header("location: login.php");
-            } 
-            else
-            {
-                echo "Something went wrong. Please try again later.";
-            }
-        mysqli_stmt_close($stmt);
-        }
-    mysqli_close($link);
+if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+    if (isset($_POST['new-post'])) {
+    	$username = $_SESSION["username"];
+    	$subjecti = $_POST["subjecti"];
+    	$posti = $_POST["posti"];
+        $query = "INSERT INTO post (username, subjecti, posti) 
+                  VALUES('$username', '$subjecti', '$posti')";
+        mysqli_query($db, $query);
+        header("location: index.php");
     }
 }
+
+//Per me marr postin e fundit
+$username2= $subjecti2 = $posti2 = $created_at ="";
+$sql = "SELECT * FROM post ORDER BY ID DESC LIMIT 1";
+$result = mysqli_query($db, $sql);
+if (mysqli_num_rows($result) > 0) {
+    while($row = mysqli_fetch_assoc($result)) {
+        $username2 = $row['username'];
+        $subjecti2 = $row['subjecti'];
+        $posti2 = $row['posti'];
+        $created_at = $row['created_at'];
+    }
+}
+$_SESSION['username2'] = $username2;
+$_SESSION['subjecti2'] = $subjecti2;
+$_SESSION['posti2'] = $posti2;
+$_SESSION['created_at'] = $created_at;
 ?>

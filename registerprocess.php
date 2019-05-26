@@ -3,14 +3,6 @@ require_once "config.php";
 
 session_start();
 
-if(isset($_POST['username']))
-{
-$_SESSION['user']= $_POST['username'];
-        $cookie_name = "user";
-        $cookie_value = $_SESSION['user'];
-        setcookie($cookie_name, $cookie_value, time() +3600, "/"); // 86400 = 1 day
-}
-
 // initializing variables
 
 $username = "";

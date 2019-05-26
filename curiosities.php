@@ -1,3 +1,6 @@
+<?php
+session_start();
+ ?>
 <html manifest="manifest.appcache">
     <head>
 
@@ -35,15 +38,34 @@
         <script src="canvas.js"></script>
 
         <div class="top-bar">
+            
             <div id="rectangle"></div>
             <div id="contact"><p>Tel: 11111 2222222222 | Mail: <a href="mailto:info@classicalart.com"/>info@classicalart.com</p></a></div>
+
             <div class="search-bar">
-            <form>
-                <input type="text" placeholder="Search" name="Search">
-                <img src="Fotot/Search-button.png"/>
-            </form>
+                <?php 
+                if(!isset($_SESSION["loggedin"]))
+                {
+                    echo '<a href="login.php"><button>Login</button></a>';
+                    echo '<a href="register.php"><button>Register</button></a>';
+
+                }
+                else
+                {
+                    echo '<span>Welcome, youre logged in as <b>'. $_SESSION["username"].'</b></span>';
+                    echo '<a href="logout.php"><button>Logout</button></a>';
+
+                }
+                ?>
+                <form>
+                    <input type="text" placeholder="Search" name="Search">
+                    <img src="Fotot/Search-button.png"/>
+                </form>
+
             </div>
+
         </div>
+
         <header>
             <div class="logo">
                 <h1>Classical Art</h1>
@@ -61,7 +83,8 @@
 
                         </ul>    
                     </li>
-                    <li><a href="gallery.php">GALLERY</a></li>
+                    <li><a id="v" href="gallery.php">GALLERY</a></li>
+                    <li><a href="posts.php">POST</a></li>
                 </ul>
             </div>
         </header>
