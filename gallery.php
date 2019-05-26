@@ -68,6 +68,29 @@
                     <h1>The World's Best Cities for Arts and Culture</h1>
                     <p>We asked our readers to rate their favorite cities in the world for arts and culture. These cities are centers of music and dance, museums, and theater. They are where iconic design and classical concertos were born, and where the latest in creative experimentation is happening seemingly on every corner. Here are the best cities in the world for soaking in culture and finding inspiration in the arts, starting with the top spot.</p>
             <span class="fadingline2"></span>
+			       <h4 style="color: #5c5c5c;font-size:25px;  font-family: Georgia Regular;font-style: italic;">Facts about Classical Art!</h4>
+                    <p><b> Let's see an array about classical art.</b></br>
+                    <?php
+                    $str = "Roman Statues were made with detachable heads";
+                    print_r (explode(" ",$str));
+                    ?> </br>
+                    <b>Now let's take that array and form it in a full sentence.</b></br>
+                    <?php
+                    $arr = array('Roman','Statues','were','made','with','detachable','heads');
+                    echo implode(" ",$arr);
+                    ?> </br>
+                    <?php
+                    $number = 12;
+                    $str = "years! Only the lips!";
+                    printf("Painting the Mona Lisa’s lips took Leonardo da Vinci %u %s ",$number,$str);
+                    ?><br>
+                    <?php
+                    echo("New brain research showed that creativity,")
+                    ?>                    
+                    <?php
+                   echo substr("And social development and self-worth, are promoted through art.",4);
+                    ?>
+            <span class="fadingline2"></span>
                     <p>Share:</p><br>
                     <a href="https://outlook.live.com/owa/"><img src="Fotot/email.png" alt="Email"/></a>
                     <a href="https://web.facebook.com/?_rdc=1&_rdr"><img src="Fotot/facebook.png" alt="Facebook"/></a>
