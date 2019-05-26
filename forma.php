@@ -1,3 +1,7 @@
+<?php 
+include('forma-orders.php');
+?>
+
 <html manifest="manifest.appcache">
     <head>
 
@@ -55,11 +59,11 @@
             <h2>Please fill out all required fields</h2>
             
             <label>First Name :</label><br>
-            <input type="text" name="name" placeholder="First Name" id="name" autofocus >
+            <input type="text" name="firstname" placeholder="First Name" id="name" autofocus >
             <br><br>
             
             <label>Last Name :</label><br>
-            <input type="text" name="name" placeholder="Last Name" id="name">
+            <input type="text" name="lastname" placeholder="Last Name" id="name">
             <br><br>
             
             <label>Date Of Birth :</label><br>
@@ -69,18 +73,17 @@
             <label>Gender :</label><br>
             <input type="radio" name="gender" value="male" id="ma" checked><span id="ma">Male</span> 
             <input type="radio" name="gender" value="female" id="ma"><span id="ma">Female</span>
-            <input type="radio" name="gender" value="other" id="ma"><span id="ma">Other</span>
             <br><br>
             
             
             <label>How Many Tickets: </label><br>
             <input type="number" name="number" min="1" max="5" id="tk" value="1"><strong id="tb">*</strong>
             <input type="number" name="number" value="15" id="tp" disabled ><strong id="tb">$ =</strong>
-            <output name="x" for="tk tp" value="15" id="tb"></output><strong id="tb">$</strong>
+            <output name="shuma-totale" for="tk tp" value="15" id="tb"></output><strong id="tb">$</strong>
             <br><br><br>
             
             <label>What Are You Interested In: </label><br>
-            <input type="text" name="arttypes" list="art" id="name" placeholder="Select an art-style">
+            <input type="text" name="interested-in" list="art" id="name" placeholder="Select an art-style">
               <datalist id="art" > 
                 <option>Abstract Art</option>
                 <option>Sculpture</option>
@@ -102,7 +105,7 @@
             <br><br>
             
             <label>Select Your Payment</label><br>
-              <select name="continent" id="name">
+              <select name="payment" id="name">
                 <option>PayPal</option>
                 <option>Visa</option>
                 <option>GoogleWallet</option>
@@ -112,13 +115,13 @@
             <br><br>
             
             <label>Credit-Card Number :</label><br>
-            <input type="text" name="number" placeholder="Enter your CC number" id="name">
+            <input type="text" name="c-number" placeholder="Enter your CC number" id="name">
             <br><br>
             
-            <input type="checkbox" id="ch" required><span id="ch"> I agree all the terms & conditions</span>
+            <input name="terms" type="checkbox" id="ch" required><span id="ch"> I agree all the terms & conditions</span>
             <br><br>
             
-            <input class="button" type="button" onclick="alert('Sorry ! Tickets are sold !')" value="Buy Tickets Now">
+            <input name="buy-tickets" class="button" type="submit" onclick="alert('Sorry ! Tickets are sold !')" value="Buy Tickets Now">
 
             
         </form>
