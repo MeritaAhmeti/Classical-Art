@@ -1,0 +1,23 @@
+   |      First Name :  Erblin
+   | 	 Last Name : Berisha
+   | 	 Date of Birth : 2222-02-22
+   | 	 Number : 3
+   | 	 Interested : Sculpture
+   | 	 Email : erblinberisha20@gmail.com
+   | 	 Password : erblin
+   | 	 Description : Mire shum   
+   | 	 Payment : PayPal
+   | 	 Credit : 1234
+   | 	 Terms : on
+ 
+   | 	 First Name :  Erblin
+   | 	 Last Name : Berisha
+   | 	 Date of Birth : 2222-02-22
+   | 	 Number : 3
+   | 	 Interested : Sculpture
+   | 	 Email : erblinberisha20@gmail.com
+   | 	 Password : erblin
+   | 	 Description : Mire shum   
+   | 	 Payment : PayPal
+   | 	 Credit : 1234
+   | 	 Terms : on
