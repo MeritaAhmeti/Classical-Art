@@ -37,6 +37,7 @@ session_start();
     {
         margin-left: 310px;
         margin-bottom: 10px;
+        padding:25px;
         font-family: "Times New Roman", Times, serif;
         float:left;
         background-color: #bfbfbf;
@@ -217,11 +218,11 @@ session_start();
                 </div>
             </div>
         </div>
-	   <p style="display:inline-block; margin-left:310px ;">Please write down the city to see if it is part of most popular cities for arts and culture?</p>
+	  <b><p style="display:inline-block; margin-left:310px ;">Please write down the city to see if it is part of most popular cities for arts and culture?</p></b>
         <form>
         <p style="display:inline-block; margin-left:310px ;"> City: 
         <input style="display:inline-block;margin-right:100px; margin-bottom: 10px;" type="text" onkeyup="showHint(this.value)"><br>
-        <p style=" margin-left:310px"> Suggestions: <span id="txtHint"></span></p>
+		<p style=" margin-left:310px"><b>Suggestions: </b><span id="txtHint"></span></p>
         </form>
   <div class="tiketa">
         <?php
@@ -249,10 +250,10 @@ session_start();
          echo $cities[8][0]."  Tickets: ".$cities[8][1].", sold: ".$cities[8][2].".<br>";
         ?>
        <br>
-       <p><a href="forma.php" target="_blank">BUY TICKETS HERE!</a><p>
+        <button style="margin-left:16px;"><a href="forma.php" target="_blank" style="text-decoration: none">BUY TICKETS HERE!</a></button>
        <br>
        </div>
-       <img src="Fotot/tiketa.jpg" alt="Tiketa"  width="350" height="250" style="margin-left: 90px; margin-top:-50px">
+       <img src="Fotot/tiketa.jpg" alt="Tiketa"  width="421" style="margin-left: 90px; margin-top:-2px; border: 1px solid #bfbfbf;  border-radius: 4px; padding: 8px;">
 <footer>
 	 <div class="copyright">
                 <p>Copyright &copy; 2012 Domain Name - All rights reserved <span class="template">Template by OS templates</span></p>
