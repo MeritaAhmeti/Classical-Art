@@ -32,6 +32,19 @@ session_start();
         }
 
     </script>
+	        <style>
+    .tiketa
+    {
+        margin-left: 310px;
+        margin-bottom: 10px;
+        font-family: "Times New Roman", Times, serif;
+        float:left;
+        background-color: #bfbfbf;
+        border: 3px solid #808080;
+        border-radius: 8px; 
+       
+    }
+</style>
     </head>
     <body>
         <div class="top-bar">
@@ -210,6 +223,36 @@ session_start();
         <input style="display:inline-block;margin-right:100px; margin-bottom: 10px;" type="text" onkeyup="showHint(this.value)"><br>
         <p style=" margin-left:310px"> Suggestions: <span id="txtHint"></span></p>
         </form>
+  <div class="tiketa">
+        <?php
+        $cities = array
+        (
+          array("<b>Florence:</b>",22,18),
+          array("<b>Rome:</b>",15,13),
+          array("<b>Paris:</b>",5,2),
+          array("<b>Athens:</b>",10,0),
+          array("<b>Barcelona:</b>",17,4),
+          array("<b>Istanbul:</b>",14,2),
+          array("<b>Santa Fe:</b>",9,3),
+          array("<b>Venice:</b>",30,27),
+          array("<b>New York:</b>",40,40)
+         );
+  
+         echo $cities[0][0]."  Tickets: ".$cities[0][1].", sold: ".$cities[0][2].".<br>";
+         echo $cities[1][0]."  Tickets: ".$cities[1][1].", sold: ".$cities[1][2].".<br>";
+         echo $cities[2][0]."  Tickets: ".$cities[2][1].", sold: ".$cities[2][2].".<br>";
+         echo $cities[3][0]."  Tickets: ".$cities[3][1].", sold: ".$cities[3][2].".<br>";
+         echo $cities[4][0]."  Tickets: ".$cities[4][1].", sold: ".$cities[4][2].".<br>";
+         echo $cities[5][0]."  Tickets: ".$cities[5][1].", sold: ".$cities[5][2].".<br>";
+         echo $cities[6][0]."  Tickets: ".$cities[6][1].", sold: ".$cities[6][2].".<br>";
+         echo $cities[7][0]."  Tickets: ".$cities[7][1].", sold: ".$cities[7][2].".<br>";
+         echo $cities[8][0]."  Tickets: ".$cities[8][1].", sold: ".$cities[8][2].".<br>";
+        ?>
+       <br>
+       <p><a href="forma.php" target="_blank">BUY TICKETS HERE!</a><p>
+       <br>
+       </div>
+       <img src="Fotot/tiketa.jpg" alt="Tiketa"  width="350" height="250" style="margin-left: 90px; margin-top:-50px">
 <footer>
 	 <div class="copyright">
                 <p>Copyright &copy; 2012 Domain Name - All rights reserved <span class="template">Template by OS templates</span></p>
