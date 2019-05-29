@@ -7,6 +7,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
   exit;
 }
 
+
 $username_err = $password_err = "";
 
 if (isset($_POST['login'])) {
@@ -21,15 +22,17 @@ if (isset($_POST['login'])) {
   if (empty($password_err) && empty($username_err)) {
     $salt='anythingyouwant_' ;
     $password = md5($salt.$password);
-    //$password = md5($password);
-    //$password=sha1($password);
+    
     $query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
     $results = mysqli_query($db, $query);
-    if (mysqli_num_rows($results) == 1) {
+    if (mysqli_num_rows($results) == 1) 
+    {
       $_SESSION['username'] = $username;
       $_SESSION['loggedin'] = true;
       header('location: index.php');
-    }else {
+    }
+    else
+	{
         $username_err ="You have entered an invalid username.";
         $password_err ="You have entered an invalid password.";
     }

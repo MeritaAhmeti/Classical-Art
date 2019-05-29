@@ -81,6 +81,17 @@
 {
 	background-color: #5b5b5b;
 }
+.main .login-container form input[type="checkbox"]
+{
+	width: 14px;
+	height:14px;
+	background: #484848;
+	border: 1px solid #535353;
+	color: #c1ddd3;
+	cursor: pointer;
+	display: inline;
+
+}
 .main .login-container .login-alert
 {
 	color: cyan;

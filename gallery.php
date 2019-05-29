@@ -89,7 +89,7 @@ session_start();
                     <li><a id="v" href="curiosities.php">CURIOSITIES</a></li>
                     <li><a id="v" href="#">DROPDOWN</a>
                         <ul class="sub-menu">
-                            <li><a href="puzzle.html">PUZZLE</a></li>
+                            <li><a href="loja.php">GAME</a></li>
                             <li><a href="tabela/tabela.html">ARTISTS</a></li>
 
                         </ul>    

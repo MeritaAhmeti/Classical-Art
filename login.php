@@ -1,6 +1,7 @@
 <?php 
 include('kontakto.php'); 
 include('loginprocess.php'); 
+
 ?>
 
 <html manifest="manifest.appcache">
@@ -31,6 +32,8 @@ include('loginprocess.php');
 
             <div class="search-bar">
                 <?php 
+                include_once ('loginprocess.php'); 
+
                 if(!isset($_SESSION["loggedin"]))
                 {
                     echo '<a href="login.php"><button>Login</button></a>';
@@ -67,7 +70,7 @@ include('loginprocess.php');
                     <li><a id="v" href="curiosities.php">CURIOSITIES</a></li>
                     <li><a id="v" href="#">DROPDOWN</a>
                         <ul class="sub-menu">
-                            <li><a href="puzzle.html">PUZZLE</a></li>
+                            <li><a href="loja.php">GAME</a></li>
                             <li><a href="tabela/tabela.html">ARTISTS</a></li>
                         </ul>    
                     </li>
@@ -92,7 +95,7 @@ include('loginprocess.php');
                                 <?php echo "*".$username_err ?>
                             </div>
                     <?php endif; ?>
-                        <input type="text" name="username" placeholder="Username" style="margin: 20px 0px;"></br>
+                        <input type="text" name="username" placeholder="Username" value="<?php if(isset($_COOKIE["user"])) { echo $_COOKIE["user"]; } ?>"style="margin: 20px 0px;"></br>
                         <h4 style="display: inline;">Password:</h4>
                     <?php 
                         if($password_err != ''): ?>
@@ -102,10 +105,22 @@ include('loginprocess.php');
                     <?php endif; ?>
                     </h4>
                         <input type="Password" name="password" placeholder="Password" style="margin: 20px 0px;"></br>
+                        <input type="checkbox" name="rememberme">
+                        <h4 style="display: inline;">Remember Me</h4>
                         <input type="submit" name="login" value="LOGIN">
-
                     </form> 
-
+                    <?php
+                    if(isset($_POST["rememberme"]))
+                    {
+                        if(isset($_POST['username']))
+                        {
+                            $_SESSION['user']= $_POST['username'];
+                            $cookie_name = "user";
+                            $cookie_value = $_SESSION['user'];
+                            setcookie($cookie_name, $cookie_value, time() +3600, "/"); // 86400 = 1 day
+                        }
+                    }
+                    ?>
                 </div>
             </div>
         </div>
@@ -148,7 +163,6 @@ include('loginprocess.php');
                     <input type="message" name="message" placeholder="Message"><br>
                     <input type="submit" name="submit" value="submit">
                     <?php 
-                        include 'kontakto.php';
                         if($msg != ''): ?>
                             <div class="alert">
                                 <?php echo $msg ?>
