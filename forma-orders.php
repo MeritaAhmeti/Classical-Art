@@ -28,10 +28,11 @@ $rez = "
    | \t Description : " . $description . "   
    | \t Payment : " . $payment . "
    | \t Credit : " . $credit . "
-   | \t Terms : " . $terms ;
+   | \t Terms : " . $terms . "
+     \t " ;
 
  $DOCUMENT_ROOT = $_SERVER['DOCUMENT_ROOT'];
-		$fileop = fopen("$DOCUMENT_ROOT/PI18_19_Gr16-master/rezervimet.txt", 'ab');
+		$fileop = fopen("$DOCUMENT_ROOT/PI18_19_Gr16/rezervimet.txt", 'ab');
 		fwrite($fileop, $rez);
         fclose($fileop);          
 
