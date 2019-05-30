@@ -1,5 +1,4 @@
 <?php 
-session_start();
 include('forma-orders.php');
 ?>
 
@@ -15,39 +14,26 @@ include('forma-orders.php');
        
         <title>Classical-Art</title>
     
+    <style type="text/css">
+    body {
+    background-image: url('Fotot/foto1.jpg');
+}
+    </style>
+
     </head>
     <body>
         
 <!-- PJESA 1 : HEADER --> 
         <div class="top-bar">
-            
             <div id="rectangle"></div>
             <div id="contact"><p>Tel: 11111 2222222222 | Mail: <a href="mailto:info@classicalart.com"/>info@classicalart.com</p></a></div>
-
             <div class="search-bar">
-                <?php 
-                if(!isset($_SESSION["loggedin"]))
-                {
-                    echo '<a href="login.php"><button>Login</button></a>';
-                    echo '<a href="register.php"><button>Register</button></a>';
-
-                }
-                else
-                {
-                    echo '<span>Welcome, youre logged in as <b>'. $_SESSION["username"].'</b></span>';
-                    echo '<a href="logout.php"><button>Logout</button></a>';
-
-                }
-                ?>
-                <form>
-                    <input type="text" placeholder="Search" name="Search">
-                    <img src="Fotot/Search-button.png"/>
-                </form>
-
+            <form>
+                <input type="text" placeholder="Search" name="Search">
+                <img src="Fotot/Search-button.png"/>
+            </form>
             </div>
-
         </div>
-
         <header>
             <div class="logo">
                 <h1 class="klasik">Classical Art</h1>
@@ -60,13 +46,12 @@ include('forma-orders.php');
                     <li><a id="v" href="curiosities.php">CURIOSITIES</a></li>
                     <li><a id="v" href="#">DROPDOWN</a>
                         <ul class="sub-menu">
-                            <li><a href="loja.php">GAME</a></li>
+                            <li><a href="puzzle.html">PUZZLE</a></li>
                             <li><a href="tabela/tabela.html">ARTISTS</a></li>
 
                         </ul>    
                     </li>
-                    <li><a id="v" href="gallery.php">GALLERY</a></li>
-                    <li><a href="posts.php">POST</a></li>
+                    <li><a href="gallery.php">GALLERY</a></li>
                 </ul>
             </div>
         </header>
@@ -76,7 +61,7 @@ include('forma-orders.php');
 <div class="mforma">
     <h1>Register Here To Buy a GLEEN BROWN  Art Gallery Ticket</h1>  
     <div class="reg">
-        <form id="reg" method="post" oninput="x.value=parseInt(tk.value)*parseInt(tp.value)">
+        <form id="reg" method="post" oninput="x.value=parseInt(tk.value)*parseInt(tp.value)" action="<?php echo $_SERVER['PHP_SELF']; ?>">
             <h2>Please fill out all required fields</h2>
             
             <label>First Name :</label><br>
@@ -142,7 +127,14 @@ include('forma-orders.php');
             <input name="terms" type="checkbox" id="ch" required><span id="ch"> I agree all the terms & conditions</span>
             <br><br>
             
-            <input name="buy-tickets" class="button" type="submit" onclick="alert('Sorry ! Tickets are sold !')" value="Buy Tickets Now">
+            <input name="buy-tickets" class="button" type="submit" >
+            <?php
+                 include 'forma-orders.php';
+                 if($msg != ''): ?>
+                    <div class="alert">
+                        <?php echo $msg ?>
+                    </div>
+                <?php endif; ?>
 
             
         </form>
@@ -159,3 +151,4 @@ include('forma-orders.php');
 
 </body>
 </html>
+
