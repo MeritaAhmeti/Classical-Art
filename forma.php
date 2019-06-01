@@ -18,6 +18,7 @@ include('forma-orders.php');
     body {
     background-image: url('Fotot/foto1.jpg');
 }
+
     </style>
 
     </head>
@@ -76,19 +77,20 @@ include('forma-orders.php');
 <div class="mforma">
     <h1>Register Here To Buy a GLEEN BROWN  Art Gallery Ticket</h1>  
     <div class="reg">
-        <form id="reg" method="post" oninput="x.value=parseInt(tk.value)*parseInt(tp.value)" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+        <form id="reg" method="post" oninput="x.value=parseInt(tk.value)*parseInt(tp.value)" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">
             <h2>Please fill out all required fields</h2>
             
             <label>First Name :</label><br>
-            <input type="text" name="firstname" placeholder="First Name" id="name" autofocus >
+            <input type="text" name="firstname" placeholder="First Name" id="name" autofocus ><span style=" color : yellow;">* <?php echo $nameErr; ?></span>
             <br><br>
             
             <label>Last Name :</label><br>
-            <input type="text" name="lastname" placeholder="Last Name" id="name">
+            <input type="text" name="lastname" placeholder="Last Name" id="name"><span style=" color : yellow;">* <?php echo $lnameErr; ?></span>
             <br><br>
             
             <label>Date Of Birth :</label><br>
             <input type="date" name="date" id="name">
+            <span style="color : yellow">* <?php echo $dateErr;?></span>
             <br><br>
             
             <label>Gender :</label><br>
@@ -104,26 +106,20 @@ include('forma-orders.php');
             <br><br><br>
             
             <label>What Are You Interested In: </label><br>
-            <input type="text" name="interested-in" list="art" id="name" placeholder="Select an art-style">
+            <input type="text" name="interested" list="art" id="name" placeholder="Select an art-style">
               <datalist id="art" > 
                 <option>Abstract Art</option>
                 <option>Sculpture</option>
                 <option>Portrait</option>
                 <option>Art Movies</option>
               </datalist>
+              <span style="color : yellow">* <?php echo $interestErr;?></span>
             <br><br>
             
             <label>Email :</label><br>
-            <input type="email" name="email" placeholder="E.g example@email.com" id="name" >
+            <input type="email" name="email" placeholder="E.g example@email.com" id="name" ><span style="color : yellow">* <?php echo $emailErr;?></span>
             <br><br>
             
-            <label>Password :</label><br>
-            <input type="password" name="pass" placeholder="Enter your pasword" id="name" >
-            <br><br>
-            
-            <label>Description :</label><br>
-            <textarea name="message" rows="10" cols="39" placeholder="Write down your expectations about this Gallery Art so we can keep it up to you"></textarea>
-            <br><br>
             
             <label>Select Your Payment</label><br>
               <select name="payment" id="name">
@@ -133,23 +129,25 @@ include('forma-orders.php');
                 <option>Venmo</option>
                 <option>Dwolla</option>
               </select>
+              <span style="color : yellow">* <?php echo $paymentErr;?></span>
             <br><br>
             
             <label>Credit-Card Number :</label><br>
-            <input type="text" name="c-number" placeholder="Enter your CC number" id="name">
+            <input type="text" name="credit" placeholder="Enter your CC number" id="name">
+            <span style="color : yellow">* <?php echo $creditErr;?></span>
             <br><br>
             
             <input name="terms" type="checkbox" id="ch" required><span id="ch"> I agree all the terms & conditions</span>
             <br><br>
             
             <input name="buy-tickets" class="button" type="submit" >
-            <?php
+            <!-- <?php
                  include 'forma-orders.php';
                  if($msg != ''): ?>
                     <div class="alert">
                         <?php echo $msg ?>
                     </div>
-                <?php endif; ?>
+                <?php endif; ?> -->
 
             
         </form>
@@ -158,6 +156,7 @@ include('forma-orders.php');
         
         
 <!-- PJESA 3 : FOOTER , COPYRIGHT -->
+
 
         <div class="copyright">
                 <p>Copyright &copy; 2012 Domain Name - All rights reserved <span class="template">Template by OS templates</span></p>

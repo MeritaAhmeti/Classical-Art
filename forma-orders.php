@@ -1,99 +1,91 @@
 <?php
 
-$firstname = $lastname = $dateOfBirth = $number = $interested = $email = $password = $description = $payment = $credit = $terms = "";
+$firstname = $lastname = $dateOfBirth = $number = $interested = $email  = $payment = $credit = $terms = $nameErr = $emailErr = $lnameErr = $dateErr = $interestErr = $paymentErr = $creditErr =  "";
 
-if($_SERVER["REQUEST_METHOD"] == "POST")
-{
 
-$firstName = $_POST["firstname"];
-$lastName = $_POST["lastname"];
-$dateOfBirth = $_POST["date"];
-$number = $_POST["number"];
-$interested = $_POST["interested-in"];
-$email = $_POST["email"];
-$password = $_POST["pass"];
-$description = $_POST["message"];
-$payment = $_POST["payment"];
-$credit = $_POST["c-number"];
-$terms = $_POST["terms"];
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-$rez = " 
-   | \t First Name :  " . $firstName . "
-   | \t Last Name : " . $lastName . "
+	if (empty($_POST["firstname"])) {
+    $nameErr = "Firstname is required!";
+  } else {
+    $firstname = test_input($_POST["firstname"]);
+
+      // check if name only contains letters and whitespace
+    if (!preg_match("/^[a-zA-Z ]*$/",$firstname)) {
+      $nameErr = "Only letters and white space allowed!"; 
+    }
+  }
+
+  if (empty($_POST["lastname"])) {
+    $lnameErr = "Lastname is required!";
+  } else {
+    $lastname = test_input($_POST["lastname"]);
+
+      // check if name only contains letters and whitespace
+    if (!preg_match("/^[a-zA-Z ]*$/",$lastname)) {
+      $lnameErr = "Only letters and white space allowed!"; 
+    }
+  }
+
+  if (empty($_POST["email"])) {
+    $emailErr = "Email is required!";
+  } else {
+    $email = test_input($_POST["email"]);
+    // check if e-mail address is well-formed
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+      $emailErr = "Invalid email format!"; 
+    }
+  }
+
+  if (empty($_POST["date"])) {
+    $dateErr = "Date of Birth is required!";
+  } else {
+    $dateOfBirth = test_input($_POST["date"]);
+  }
+
+  if (empty($_POST["interested"])) {
+    $interestErr = "This field is required!";
+  } else {
+    $interested = test_input($_POST["interested"]);
+  }
+
+  if (empty($_POST["payment"])) {
+    $paymentErr = "Payment is required!";
+  } else {
+    $payment = test_input($_POST["payment"]);
+  }
+
+  if (empty($_POST["credit"])) {
+    $creditErr = "Credit card is required!";
+  } else {
+    $credit = test_input($_POST["credit"]);
+  }
+
+  $rez = " 
+   | \t First Name :  " . $firstname . "
+   | \t Last Name : " . $lastname . "
    | \t Date of Birth : " . $dateOfBirth . "
    | \t Number : " . $number . "
    | \t Interested : " . $interested . "
    | \t Email : " . $email . "
-   | \t Password : " . $password . "
-   | \t Description : " . $description . "   
    | \t Payment : " . $payment . "
    | \t Credit : " . $credit . "
-   | \t Terms : " . $terms . "
      \t " ;
 
  $DOCUMENT_ROOT = $_SERVER['DOCUMENT_ROOT'];
 		$fileop = fopen("$DOCUMENT_ROOT/PI18_19_Gr16/rezervimet.txt", 'ab');
 		fwrite($fileop, $rez);
-        fclose($fileop);          
-
-
+        fclose($fileop); 
 }
 
-$msg = '';
-if(filter_has_var(INPUT_POST, 'buy-tickets'))
-{
-   $firstName = $_POST["firstname"];
-   $lastName = $_POST["lastname"];
-   $dateOfBirth = $_POST["date"];
-   $number = $_POST["number"];
-   $interested = $_POST["interested-in"];
-   $email = $_POST["email"];
-   $description = $_POST["message"];
-   $payment = $_POST["payment"];
-   $credit = $_POST["c-number"];
-   $terms = $_POST["terms"];
 
-   if(!empty($firstName) && !empty($lastName) &&!empty($dateOfBirth) &&!empty($number) &&!empty($interested) &&!empty($email) &&!empty($description) &&!empty($payment) &&!empty($credit)   &&!empty($terms))
-     { 
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
 
-      if(filter_var($email, FILTER_VALIDATE_EMAIL) === false)
-      {
-         $msg = 'Email is not valid';
-      }
-      else
-      {
-         $toEmail = "erblinberisha@hotmail.com";
-         $subject =" Message from : " . $firstName;
-         $body = '
-         <h2>New message ! </h2>
-         <h4>Name</h4><p>' . $firstName . '</p>
-         <h4>Email</h4><p>' .$email. '</p>';
-
-         $headers = "MIME-Version: 1.0"."\r\n";
-         $headers .= "Content-Type:text/html;charset=UTF-8"."\r\n";
-
-         $headers .= "From: ".$firstName. "<".$email.">"."\r\n";
-
-         if(mail($toEmail,$subject,$body,$headers))
-            {
-               //Emaili dergohet
-               $msg = 'Your email is sent!';
-            }
-            else
-            {
-               $msg = 'Your email is not sent!';
-            }
-         }
-
-      }
-
-         else
-      {
-         //Nese nuk jane te mbushura
-         $msg = 'Please fill in all fields!';
-      }
-
-
-      }
+  
+}
 
 ?>

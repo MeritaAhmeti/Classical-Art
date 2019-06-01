@@ -13,15 +13,15 @@
 			//Tash me shiku a eshte emaila valide
 			if(filter_var($email, FILTER_VALIDATE_EMAIL) === false)
 			{
-				$msg = 'Emaila eshte jo valide!';
+				$msg = 'Email is not valid!';
 			}
 			else
 			{
 				//Ne qofte se fushat nuk jane te zbrazta edhe emaila eshte ne rregull atehere ekzekutohet qikjo
 				$toEmail = "etnik.g8@gmail.com";
-				$subject = 'Mesazh nga '. $name;
+				$subject = 'Message from '. $name;
 				$body = '
-				<h2>Mesazh nga kontakti</h2>
+				<h2>Message from contact</h2>
 				<h4>Name</h4><p>'.$name.'</p>
 				<h4>Email</h4><p>'.$email.'</p>
 				<h4>Message</h4><p>'.$message.'</p>';
@@ -37,11 +37,11 @@
 				if(mail($toEmail,$subject,$body,$headers))
 				{
 					//Emaili dergohet
-					$msg = 'E-maili juaj eshte derguar!';
+					$msg = 'Your e-mail is sent!';
 				}
 				else
 				{
-					$msg = 'E-maili juaj nuk eshte derguar!';
+					$msg = 'Your e-mail is not sent!';
 				}
 			}
 
@@ -49,7 +49,7 @@
 		else
 		{
 			//Nese nuk jane te mbushura
-			$msg = 'Ju lutem mbushni te gjitha fushat!';
+			$msg = 'Please fill in all fields!';
 		}
 	}
 ?>

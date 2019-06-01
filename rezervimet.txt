@@ -1,23 +1,97 @@
-   |      First Name :  Erblin
-   | 	 Last Name : Berisha
-   | 	 Date of Birth : 2222-02-22
-   | 	 Number : 3
-   | 	 Interested : Sculpture
-   | 	 Email : erblinberisha20@gmail.com
-   | 	 Password : erblin
-   | 	 Description : Mire shum   
-   | 	 Payment : PayPal
-   | 	 Credit : 1234
-   | 	 Terms : on
- 
+
+     	  
    | 	 First Name :  Erblin
    | 	 Last Name : Berisha
-   | 	 Date of Birth : 2222-02-22
-   | 	 Number : 3
-   | 	 Interested : Sculpture
+   | 	 Date of Birth : 1998-03-26
+   | 	 Number : 1
+   | 	 Interested : 
    | 	 Email : erblinberisha20@gmail.com
-   | 	 Password : erblin
-   | 	 Description : Mire shum   
+   | 	 Password : 
+   | 	 Description :    
    | 	 Payment : PayPal
-   | 	 Credit : 1234
+   | 	 Credit : 1111111
    | 	 Terms : on
+     	  
+   | 	 First Name :  
+   | 	 Last Name : 
+   | 	 Date of Birth : 0011-11-11
+   | 	 Number : 
+   | 	 Interested : Abstract Art
+   | 	 Email : erblinberisha20@gmail.com
+   | 	 Payment : PayPal
+   | 	 Credit : 111111
+   | 	 Terms : 
+     	  
+   | 	 First Name :  Erblin
+   | 	 Last Name : Berisha
+   | 	 Date of Birth : 1111-11-11
+   | 	 Number : 
+   | 	 Interested : Abstract Art
+   | 	 Email : erblinberisha20@gmail.com
+   | 	 Payment : Visa
+   | 	 Credit : 1111
+   | 	 Terms : 
+     	  
+   | 	 First Name :  Erblin
+   | 	 Last Name : Berisha
+   | 	 Date of Birth : 1111-11-11
+   | 	 Number : 
+   | 	 Interested : Abstract Art
+   | 	 Email : erblinberisha20@gmail.com
+   | 	 Payment : Visa
+   | 	 Credit : 1111
+     	  
+   | 	 First Name :  
+   | 	 Last Name : 
+   | 	 Date of Birth : 
+   | 	 Number : 
+   | 	 Interested : 
+   | 	 Email : 
+   | 	 Payment : PayPal
+   | 	 Credit : 
+     	  
+   | 	 First Name :  erblin.
+   | 	 Last Name : 
+   | 	 Date of Birth : 
+   | 	 Number : 
+   | 	 Interested : 
+   | 	 Email : 
+   | 	 Payment : PayPal
+   | 	 Credit : 
+     	  
+   | 	 First Name :  erblin.
+   | 	 Last Name : 
+   | 	 Date of Birth : 
+   | 	 Number : 
+   | 	 Interested : 
+   | 	 Email : 
+   | 	 Payment : PayPal
+   | 	 Credit : 
+     	  
+   | 	 First Name :  erblin.
+   | 	 Last Name : 
+   | 	 Date of Birth : 
+   | 	 Number : 
+   | 	 Interested : 
+   | 	 Email : 
+   | 	 Payment : PayPal
+   | 	 Credit : 
+     	  
+   | 	 First Name :  erblin.
+   | 	 Last Name : 
+   | 	 Date of Birth : 
+   | 	 Number : 
+   | 	 Interested : 
+   | 	 Email : 
+   | 	 Payment : PayPal
+   | 	 Credit : 
+     	  
+   | 	 First Name :  erblin.
+   | 	 Last Name : 
+   | 	 Date of Birth : 
+   | 	 Number : 
+   | 	 Interested : 
+   | 	 Email : 
+   | 	 Payment : PayPal
+   | 	 Credit : 
+     	 
