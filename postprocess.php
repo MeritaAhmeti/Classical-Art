@@ -17,7 +17,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 //Per me marr postin e fundit
 $username2= $subjecti2 = $posti2 = $created_at ="";
 $sql = "SELECT * FROM post ORDER BY ID DESC LIMIT 1";
-$result = mysqli_query($db, $sql);
+$result = mysqli_query($db, $sql) or die ("The query could not be completed!");
 if (mysqli_num_rows($result) > 0) {
     while($row = mysqli_fetch_assoc($result)) {
         $username2 = $row['username'];

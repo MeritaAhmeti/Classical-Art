@@ -1,5 +1,6 @@
 <?php 
 include('forma-orders.php');
+session_start();
 ?>
 
 <html manifest="manifest.appcache">

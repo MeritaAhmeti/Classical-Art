@@ -40,8 +40,8 @@ if (empty($username_err) && empty($password_err) && empty($confirm_password_err)
 //$password = md5($password_1);//encrypt the password before saving in the database
 	$salt='anythingyouwant_' ;
 	$password = md5($salt.$password_1);
-	$query = "INSERT INTO users (username, password) 
-			  VALUES('$username', '$password')";
+	$query = "INSERT INTO users (usergroup, username, password) 
+			  VALUES('1', '$username', '$password')";
 	mysqli_query($db, $query);
 	header('location: login.php');
 }

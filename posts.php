@@ -130,9 +130,9 @@ include('postprocess.php');
                 <form method="post" action="posts.php">
                     <h1>Post</h1>
                     <h4>Subject:</h4>
-                    <input type="text" name="subjecti"><br/>
+                    <input type="text" name="subjecti" placeholder="Write a subject."><br/>
                     <h4>Message</h4>
-                    <textarea name="posti" rows="10" cols="34" placeholder="Write a post."></textarea><br/>
+                    <textarea name="posti" rows="10" cols="34"" placeholder="Write a post.""></textarea><br/>
                     <input type="submit" name="new-post" value="Submit a new post">
                 </form>
             </div>
