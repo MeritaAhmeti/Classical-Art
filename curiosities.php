@@ -52,7 +52,7 @@ session_start();
                 }
                 else
                 {
-                    echo '<span>Welcome, youre logged in as <b>'. $_SESSION["username"].'</b></span>';
+                    echo '<span>Welcome, you are logged in as <b>'. $_SESSION["username"].'</b></span>';
                     echo '<a href="logout.php"><button>Logout</button></a>';
 
                 }
@@ -79,12 +79,11 @@ session_start();
                     <li><a id="v" href="#">DROPDOWN</a>
                         <ul class="sub-menu">
                             <li><a href="loja.php">GAME</a></li>
-                            <li><a href="tabela/tabela.html">ARTISTS</a></li>
-
+                            <li><a href="artists.php">ARTISTS</a></li>
+                            <li><a href="posts.php">POST</a></li>
                         </ul>    
                     </li>
-                    <li><a id="v" href="gallery.php">GALLERY</a></li>
-                    <li><a href="posts.php">POST</a></li>
+                    <li><a href="gallery.php">GALLERY</a></li>
                 </ul>
             </div>
         </header>
