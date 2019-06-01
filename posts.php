@@ -68,11 +68,11 @@ include('postprocess.php');
                     <li><a id="v" href="#">DROPDOWN</a>
                         <ul class="sub-menu">
                             <li><a href="loja.php">GAME</a></li>
-                            <li><a href="tabela/tabela.html">ARTISTS</a></li>
+                            <li><a href="artists.php">ARTISTS</a></li>
+                            <li><a href="posts.php">POST</a></li>
                         </ul>    
                     </li>
-                    <li><a id="v" href="gallery.php">GALLERY</a></li>
-                    <li><a href="posts.php" style="color: #1194B2">POST</a></li>
+                    <li><a href="gallery.php">GALLERY</a></li>
                 </ul>
             </div>
             
@@ -130,9 +130,9 @@ include('postprocess.php');
                 <form method="post" action="posts.php">
                     <h1>Post</h1>
                     <h4>Subject:</h4>
-                    <input type="text" name="subjecti"><br/>
+                    <input type="text" name="subjecti" placeholder="Write a subject."><br/>
                     <h4>Message</h4>
-                    <textarea name="posti" rows="10" cols="34" placeholder="Write a post."></textarea><br/>
+                    <textarea name="posti" rows="10" cols="34"" placeholder="Write a post.""></textarea><br/>
                     <input type="submit" name="new-post" value="Submit a new post">
                 </form>
             </div>

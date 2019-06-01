@@ -93,5 +93,33 @@
    | 	 Interested : 
    | 	 Email : 
    | 	 Payment : PayPal
+<<<<<<< HEAD
    | 	 Credit : 
+=======
+   | 	 Credit : 1234
+   | 	 Terms : on 
+   | 	 First Name :  
+   | 	 Last Name : 
+   | 	 Date of Birth : 
+   | 	 Number : 1
+   | 	 Interested : 
+   | 	 Email : 
+   | 	 Password : 
+   | 	 Description :    
+   | 	 Payment : PayPal
+   | 	 Credit : 
+   | 	 Terms : on
+     	  
+   | 	 First Name :  
+   | 	 Last Name : 
+   | 	 Date of Birth : 
+   | 	 Number : 1
+   | 	 Interested : 
+   | 	 Email : 
+   | 	 Password : 
+   | 	 Description :    
+   | 	 Payment : PayPal
+   | 	 Credit : 
+   | 	 Terms : on
+>>>>>>> b1cb12c96a4f00ee5828a2c3eea2a67b3ef62a8b
      	 
