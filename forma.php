@@ -63,7 +63,7 @@ session_start();
                     <li><a id="v" href="curiosities.php">CURIOSITIES</a></li>
                     <li><a id="v" href="#">DROPDOWN</a>
                         <ul class="sub-menu">
-                            <li><a href="puzzle.html">PUZZLE</a></li>
+                            <li><a href="loja.php">GAME</a></li>
                             <li><a href="paintings.php">PAINTINGS</a></li>
                             <li><a href="posts.php">POST</a></li>
                             <li><a href="admincp.php">ADMINCP</a></li>
