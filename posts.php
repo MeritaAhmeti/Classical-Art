@@ -68,8 +68,9 @@ include('postprocess.php');
                     <li><a id="v" href="#">DROPDOWN</a>
                         <ul class="sub-menu">
                             <li><a href="loja.php">GAME</a></li>
-                            <li><a href="artists.php">ARTISTS</a></li>
+                            <li><a href="paintings.php">PAINTINGS</a></li>
                             <li><a href="posts.php">POST</a></li>
+                            <li><a href="admincp.php">ADMINCP</a></li>
                         </ul>    
                     </li>
                     <li><a href="gallery.php">GALLERY</a></li>

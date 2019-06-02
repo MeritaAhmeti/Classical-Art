@@ -1,40 +1,7 @@
-<script>
-function showUser(str) {
-    if (str == "")
-    {
-        document.getElementById("txtUser").innerHTML = "";
-        return;
-    } 
-    else 
-    {
-        if (window.XMLHttpRequest) 
-        {
-            // code for IE7+, Firefox, Chrome, Opera, Safari
-            xmlhttp = new XMLHttpRequest();
-        } 
-        else 
-        {
-            // code for IE6, IE5
-            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-        }
-        xmlhttp.onreadystatechange = function() 
-        {
-            if (this.readyState == 4 && this.status == 200) 
-            {
-                document.getElementById("txtUser").innerHTML = this.responseText;
-            }
-        };
-        xmlhttp.open("GET","getuser.php?q="+str,true);
-        xmlhttp.send();
-    }
-}
-</script>
-
-
 <?php 
 include('kontakto.php'); 
+include('postprocess.php');
 ?>
-
 <html manifest="manifest.appcache">
 
     <head>
@@ -45,7 +12,9 @@ include('kontakto.php');
         <link rel="stylesheet" href="CSS/content.css">
         <link rel="stylesheet" href="CSS/footer.css">
         <link rel="stylesheet" href="CSS/dropdown.css">
-        <link rel="stylesheet" href="CSS/admincp.css">
+        <link rel="stylesheet" href="CSS/curiosities.css">
+        <link rel="stylesheet" href="CSS/gallery.css">
+        <link rel="stylesheet" href="CSS/puzzle.css">
 
 
         <title>Classical-Art</title>
@@ -61,8 +30,6 @@ include('kontakto.php');
 
             <div class="search-bar">
                 <?php 
-                session_start();
-
                 if(!isset($_SESSION["loggedin"]))
                 {
                     echo '<a href="login.php"><button>Login</button></a>';
@@ -71,7 +38,7 @@ include('kontakto.php');
                 }
                 else
                 {
-                    echo '<span>Welcome, you are logged in as <b>'. $_SESSION["username"].'</b></span>';
+                    echo '<span>Welcome, youre logged in as <b>'. $_SESSION["username"].'</b></span>';
                     echo '<a href="logout.php"><button>Logout</button></a>';
 
                 }
@@ -111,33 +78,156 @@ include('kontakto.php');
             
         </header>
 
+        <?php
+        class Artisti {
 
 
-        <div class="main">
-            <div class="user-container">
-                <div class="admincp-header">
-                    <h1>Search for a User</h1>
-                    <form>
-                        <input type="text" name="users" onkeyup="showUser(this.value)">
-                    </form> 
-                    <?php
-                    if(isset($_POST["rememberme"]))
-                    {
-                        if(isset($_POST['username']))
-                        {
-                            $_SESSION['user']= $_POST['username'];
-                            $cookie_name = "user";
-                            $cookie_value = $_SESSION['user'];
-                            setcookie($cookie_name, $cookie_value, time() +3600, "/"); // 86400 = 1 day
-                        }
-                    }
-                    ?>
-                </div>
-                <div id="txtUser"style="display: inline-block; margin-top: 100px; margin-left: 240px"></div>
+          private $emri;
+          private $mbiemri;
+          private $vendlindja;
+
+          function __construct($emri, $mbiemri, $vendlindja)
+          {
+            $this->setEmri($emri);
+            $this->setMbiemri($mbiemri);
+            $this->setVendlindja($vendlindja);
+          }
+
+          //ENKAPSULIMI
+
+          //GETTERS
+          public function getEmri()
+          {
+            return $this->emri;
+          }
+          public function getMbiemri()
+          {
+            return $this->mbiemri;
+          }
+          public function getVendlindja()
+          {
+            return $this->vendlindja;
+          }
+
+          //SETTERS
+          public function setEmri($emri)
+          {
+            $this->emri = $emri;
+          }
+          public function setMbiemri($mbiemri)
+          {
+            $this->mbiemri = $mbiemri;
+          }
+          public function setVendlindja($vendlindja)
+          {
+            $this->vendlindja = $vendlindja;
+          }
+
+          public function __toString()
+          {
+            $line="First Name: ".$this->getEmri()."</br>";
+            $line.="Last Name: ".$this->getMbiemri()."</br>";
+            $line.="Born in: ".$this->getVendlindja()."</br>";
+
+            return $line;
+          }
+        }
+
+        abstract class Vepra extends Artisti {
+          private $emriVepres;
+          private $dataVepres;
+
+          function __construct($emri, $mbiemri, $vendlindja, $emriVepres, $dataVepres){
+            parent::__construct($emri, $mbiemri, $vendlindja);
+            $this->setEmriVepres($emriVepres);
+            $this->setDataVepres($dataVepres);
+          }
+          public function getEmriVepres()
+          {
+            return $this->emriVepres;
+          }
+          public function getDataVepres()
+          {
+            return $this->dataVepres;
+          }
+
+          public function setEmriVepres($emriVepres)
+          {
+            $this->emriVepres = $emriVepres;
+          }
+          public function setDataVepres($dataVepres)
+          {
+            $this->dataVepres = $dataVepres;
+          }
+
+          public function __toString() {
+            $line=parent::__toString();
+            $line.="Painting: ".$this->getEmriVepres()."</br>";
+            $line.="Painting Created in: ".$this->getDataVepres()."</br>";
+
+            return $line;
+          }
+        }
+
+        class Piktura extends Vepra {
+          private $qmimi;
+
+          function __construct($emri, $mbiemri, $vendlindja, $emriVepres, $dataVepres, $qmimi)
+          {
+            parent::__construct($emri, $mbiemri, $vendlindja, $emriVepres, $dataVepres);
+            $this->setQmimi($qmimi);
+          }
+
+          public function getQmimi()
+          {
+            return $this->qmimi;
+          }
+          public function setQmimi($qmimi)
+          {
+            $this->qmimi = $qmimi;
+          }
+          public function __toString()
+          {
+            return parent::__toString()." Price: ".$this->getQmimi();
+          }
+        }
+
+        //Pikturat
+        $Leonardo = new Piktura("Leonardo","Da Vinci","Italy","Mona Lisa","1503","830 Milion $");
+        $Johannes = new Piktura("Johannes","Vermeer","Netherlands","Girl with a Pearl Earring","1665","30 milion $");
+        $Claude = new Piktura("Claude","Monnet","France","Sunrise","1872","7.2 milion $");
+
+?>
+        <h3 style=" margin-top:10px;margin-left:auto; margin-right:auto;text-align:center ;color: #5c5c5c; font-size:35px; font-family:'Segoe UI Light';">Most expensive paintings of all the time.</h3>
+        <div class="container">
+          <div class="gallery">
+            <img src="Fotot/monalisa.jpg" alt="LV" width="300" height="300" >
+            <div class="pershkrimi" style="font-family:'Segoe UI Light';background-color: #232323;color: rgb(152, 152, 152);">
+              <?php
+              echo $Leonardo;
+              ?>
             </div>
-        </div>
+          </div>
 
-    
+          <div class="gallery">
+            <img src="Fotot/girlwithapearlearring.jpg" alt="VVG" width="300" height="300" >
+            <div class="pershkrimi" style="font-family:'Segoe UI Light';background-color: #232323;color: rgb(152, 152, 152);">
+              <?php
+              echo $Johannes;
+              ?>
+            </div>
+          </div>
+          <div class="gallery">
+            <img src="Fotot/sunrise.jpg" alt="PB" width="300" height="300" >
+            <div class="pershkrimi" style="font-family:'Segoe UI Light';background-color: #232323;color: rgb(152, 152, 152);">
+              <?php
+              echo $Claude;
+              ?>
+            </div>
+          </div>
+        </div>
+      </div>
+
 <footer>
     
   <div class="bllok">
@@ -176,6 +266,7 @@ include('kontakto.php');
                     <input type="message" name="message" placeholder="Message"><br>
                     <input type="submit" name="submit" value="submit">
                     <?php 
+                        include 'kontakto.php';
                         if($msg != ''): ?>
                             <div class="alert">
                                 <?php echo $msg ?>
