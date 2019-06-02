@@ -131,9 +131,29 @@ session_start();
                     <p>Share:</p><br>
                     <a href="https://outlook.live.com/owa/"><img src="Fotot/email.png" alt="Email"/></a>
                     <a href="https://web.facebook.com/?_rdc=1&_rdr"><img src="Fotot/facebook.png" alt="Facebook"/></a>
-                    <a href="https://twitter.com/"><img src="Fotot/twitter.png" alt="Twitter"/></a>
-                </div>
+                    <a href="https://twitter.com/"><img src="Fotot/twitter.png" alt="Twitter"/></a><br>
+
+                    <?php
+
+                    require_once ('php-graph-sdk-5.4.0/src/Facebook/autoload.php');
+
+                    $fb = new Facebook\Facebook([
+                    'app_id' => '893867124306703',
+                    'app_secret' => '92391a93331df487ae13588c8deb6b942',
+                    'default_graph_version' => 'v2.10',
+                    ]);
+    
+                    $helper = $fb->getRedirectLoginHelper();
+                   $permissions = ['email']; // Optional permissions
+                    // URL ABSOLUTE
+                    $loginUrl = $helper->getLoginUrl('http://localhost:80/php/PI18_19_GR16/facebook.php', $permissions);
+
+                    echo '   <a href="' . $loginUrl . '" style="margin:auto;"> Click here to see our posts on facebook!   </a></br>';
+                     ?>
+                
             </div>
+          </div>
+
 
 
           <div class="content2">
