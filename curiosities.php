@@ -81,6 +81,7 @@ session_start();
                             <li><a href="loja.php">GAME</a></li>
                             <li><a href="artists.php">ARTISTS</a></li>
                             <li><a href="posts.php">POST</a></li>
+                            <li><a href="admincp.php">ADMINCP</a></li>
                         </ul>    
                     </li>
                     <li><a href="gallery.php">GALLERY</a></li>
