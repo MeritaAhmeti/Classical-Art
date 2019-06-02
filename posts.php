@@ -126,14 +126,14 @@ include('postprocess.php');
         <?php 
         if(isset($_SESSION["loggedin"]))
         {
-        echo '<div class="main">
+        echo '<div class="main" style="font-family:'."Segoe UI Light".';">
             <div class="post-container">
                 <form method="post" action="posts.php">
                     <h1>Post</h1>
                     <h4>Subject:</h4>
-                    <input type="text" name="subjecti" placeholder="Write a subject."><br/>
-                    <h4>Message</h4>
-                    <textarea name="posti" rows="10" cols="34"" placeholder="Write a post.""></textarea><br/>
+                    <input type="text" name="subjecti" placeholder="Write a subject." style="font-family:'."Segoe UI Light".';"><br/>
+                    <h4>Message:</h4>
+                    <textarea maxlength="150" name="posti" rows="10" cols="30"" placeholder="Write a post." style="font-family:'."Segoe UI Light".';resize: none;"></textarea><br/>
                     <input type="submit" name="new-post" value="Submit a new post">
                 </form>
             </div>
@@ -143,7 +143,7 @@ include('postprocess.php');
     {
         echo '<div class="main">
             <div class="post-container">
-                <h3 style="width: 400px; padding: 100px 0;margin-left: -25px;"> You must be logged in to write a post.</h3>
+                <h3 style="width: 400px; padding: 100px 0;margin-left: -25px; font-family:'."Segoe UI Light".';"> You must be logged in to write a post.</h3>
             </div>
         </div>';
     }
